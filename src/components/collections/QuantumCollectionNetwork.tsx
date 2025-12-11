@@ -209,7 +209,7 @@ export default function QuantumCollectionNetwork() {
               {nodes.find(n => n.id === selectedNode)?.category}
             </div>
             <div className="text-cyan-400 text-xs mt-1">
-              Energy: {(nodes.find(n => n.id === selectedNode)?.energy * 100).toFixed(0)}%
+              Energy: {((nodes.find(n => n.id === selectedNode)?.energy || 0) * 100).toFixed(0)}%
             </div>
           </div>
         )}
