@@ -6,7 +6,7 @@ const NeuralNetwork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const nodes = useRef<{x: number, y: number, vx: number, vy: number}[]>([]);
   const connections = useRef<{a: number, b: number, alpha: number}[]>([]);
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -105,7 +105,7 @@ const NeuralNetwork = () => {
 
     // Cleanup
     return () => {
-      if (animationFrameId.current) {
+      if (animationFrameId.current !== null) {
         cancelAnimationFrame(animationFrameId.current);
       }
       window.removeEventListener('resize', resizeCanvas);
