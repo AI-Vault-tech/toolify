@@ -1,0 +1,56 @@
+{
+  "name": "ai-nexus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The world's ultimate AI ecosystem - A comprehensive directory of AI tools, resources, and innovations",
+  "keywords": [
+    "ai",
+    "artificial-intelligence",
+    "directory",
+    "tools",
+    "nextjs",
+    "typescript",
+    "tailwindcss"
+  ],
+  "homepage": "https://ai-nexus.vercel.app",
+  "bugs": {
+    "url": "https://github.com/your-username/ai-nexus/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "AI Nexus Team",
+    "email": "team@ai-nexus.com",
+    "url": "https://ai-nexus.com"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.0",
+    "algoliasearch": "^4.23.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.10",
+    "instantsearch.js": "^4.69.0",
+    "lucide-react": "^0.556.0",
+    "next": "16.0.7",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-instantsearch": "^7.11.0",
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.165.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.7",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
