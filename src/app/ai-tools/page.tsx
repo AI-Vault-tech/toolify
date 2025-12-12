@@ -3,8 +3,43 @@ import Link from 'next/link';
 import { Code, BarChart4, Image as ImageIcon, Mic, Languages, Heart, FileText, MessageSquare, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Tools & Features | AI Nexus',
-  description: 'Explore our collection of powerful AI tools and features',
+  title: 'AI Tools Directory | AI Nexus - 35,000+ AI Tools',
+  description: "Discover the world's largest AI tools directory with 35,000+ cutting-edge artificial intelligence tools, platforms, and resources. Find the perfect AI solution for your needs.",
+  keywords: [
+    'AI tools',
+    'artificial intelligence tools',
+    'machine learning tools',
+    'AI platforms',
+    'AI software',
+    'best AI tools',
+    'AI tools directory',
+    'AI resources'
+  ],
+  openGraph: {
+    title: 'AI Tools Directory | AI Nexus - 35,000+ AI Tools',
+    description: "Discover the world's largest AI tools directory with 35,000+ cutting-edge artificial intelligence tools, platforms, and resources. Find the perfect AI solution for your needs.",
+    url: 'https://toolify-theta.vercel.app/ai-tools',
+    siteName: 'AI Nexus',
+    images: [
+      {
+        url: 'https://toolify-theta.vercel.app/images/ai-tools-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AI Tools Directory - 35,000+ AI Tools',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Tools Directory | AI Nexus - 35,000+ AI Tools',
+    description: "Discover the world's largest AI tools directory with 35,000+ cutting-edge artificial intelligence tools, platforms, and resources.",
+    images: ['https://toolify-theta.vercel.app/images/ai-tools-og.jpg'],
+  },
+  alternates: {
+    canonical: 'https://toolify-theta.vercel.app/ai-tools',
+  },
 };
 
 const aiTools = [
@@ -87,8 +122,8 @@ export default function AIToolsPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">AI Tools & Features</h1>
-          <p className="text-xl text-gray-300">Explore our collection of powerful AI tools to enhance your workflow</p>
+          <h1 className="text-4xl font-bold text-white mb-4">AI Tools Directory - 35,000+ AI Tools</h1>
+          <p className="text-xl text-gray-300">Discover the world's largest collection of cutting-edge artificial intelligence tools, platforms, and resources to enhance your workflow and boost productivity.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

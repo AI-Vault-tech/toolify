@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { blogPosts, BlogPost } from '@/data/blogPosts';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
 
 // Add type for the params
 type PageProps = {
@@ -9,6 +10,64 @@ type PageProps = {
     slug: string;
   };
 };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const post: BlogPost | undefined = blogPosts.find((item: BlogPost) => item.slug === params.slug);
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found | AI Nexus Blog',
+    };
+  }
+  
+  const excerpt = post.excerpt.length > 160 ? `${post.excerpt.substring(0, 157)}...` : post.excerpt;
+  
+  return {
+    title: `${post.title} | AI Nexus Blog`,
+    description: excerpt,
+    keywords: [
+      ...post.tags,
+      'AI',
+      'artificial intelligence',
+      'machine learning',
+      post.category
+    ],
+    authors: [{ name: post.author.name }],
+    openGraph: {
+      title: `${post.title} | AI Nexus Blog`,
+      description: excerpt,
+      url: `https://toolify-theta.vercel.app/blog/${post.slug}`,
+      siteName: 'AI Nexus',
+      images: [
+        {
+          url: post.image 
+            ? `https://toolify-theta.vercel.app/images/blog/${post.image}.jpg`
+            : 'https://toolify-theta.vercel.app/images/blog-default.jpg',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author.name],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | AI Nexus Blog`,
+      description: excerpt,
+      images: [
+        post.image 
+          ? `https://toolify-theta.vercel.app/images/blog/${post.image}.jpg`
+          : 'https://toolify-theta.vercel.app/images/blog-default.jpg'
+      ],
+    },
+    alternates: {
+      canonical: `https://toolify-theta.vercel.app/blog/${post.slug}`,
+    },
+  };
+}
 
 export default function BlogPostPage({ params }: PageProps) {
   const post: BlogPost | undefined = blogPosts.find((item: BlogPost) => item.slug === params.slug);

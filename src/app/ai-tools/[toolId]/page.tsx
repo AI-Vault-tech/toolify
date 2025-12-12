@@ -142,13 +142,45 @@ export async function generateMetadata(
     };
   }
 
+  const description = tool.longDescription || tool.description;
+  const fullDescription = `Discover ${tool.title} on AI Nexus. ${description} Explore features, user reviews, and alternatives for this AI tool. Part of our collection of 35,000+ AI tools.`;
+
   return {
-    title: `${tool.title} | AI Nexus`,
-    description: tool.description,
+    title: `${tool.title} | AI Nexus - AI Tools Directory`,
+    description: fullDescription,
+    keywords: [
+      tool.title,
+      `${tool.title} AI`,
+      `${tool.title} tool`,
+      'AI tools',
+      tool.category,
+      'artificial intelligence',
+      'machine learning'
+    ],
     openGraph: {
-      title: `${tool.title} | AI Nexus`,
-      description: tool.longDescription || tool.description,
+      title: `${tool.title} | AI Nexus - AI Tools Directory`,
+      description: fullDescription,
+      url: `https://toolify-theta.vercel.app/ai-tools/${tool.id}`,
+      siteName: 'AI Nexus',
+      images: [
+        {
+          url: `https://toolify-theta.vercel.app/images/tools/${tool.id}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${tool.title} - AI Tool on AI Nexus`,
+        },
+      ],
+      locale: 'en_US',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${tool.title} | AI Nexus - AI Tools Directory`,
+      description: fullDescription,
+      images: [`https://toolify-theta.vercel.app/images/tools/${tool.id}.jpg`],
+    },
+    alternates: {
+      canonical: `https://toolify-theta.vercel.app/ai-tools/${tool.id}`,
     },
   };
 }
