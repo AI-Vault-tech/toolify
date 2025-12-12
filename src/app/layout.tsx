@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
   metadataBase: new URL('https://toolify-theta.vercel.app'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://toolify-theta.vercel.app',
     languages: {
       'en-US': '/en-US',
     },
@@ -100,9 +100,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  alternates: {
-    canonical: 'https://toolify-theta.vercel.app',
   },
 };
 

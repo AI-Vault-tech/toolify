@@ -4,48 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { blogPosts } from '@/data/blogPosts';
 import BlogList from '@/components/blog/BlogList';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'AI Blog | AI Nexus - Latest AI Insights & Trends',
-  description: 'Stay updated with the latest artificial intelligence trends, insights, and breakthroughs. Explore expert articles on machine learning, NLP, computer vision, and more.',
-  keywords: [
-    'AI blog',
-    'artificial intelligence',
-    'machine learning',
-    'AI trends',
-    'AI insights',
-    'AI news',
-    'NLP',
-    'computer vision',
-    'deep learning'
-  ],
-  openGraph: {
-    title: 'AI Blog | AI Nexus - Latest AI Insights & Trends',
-    description: 'Stay updated with the latest artificial intelligence trends, insights, and breakthroughs. Explore expert articles on machine learning, NLP, computer vision, and more.',
-    url: 'https://toolify-theta.vercel.app/blog',
-    siteName: 'AI Nexus',
-    images: [
-      {
-        url: 'https://toolify-theta.vercel.app/images/blog-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'AI Nexus Blog - Latest AI Insights',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'AI Blog | AI Nexus - Latest AI Insights & Trends',
-    description: 'Stay updated with the latest artificial intelligence trends, insights, and breakthroughs.',
-    images: ['https://toolify-theta.vercel.app/images/blog-og.jpg'],
-  },
-  alternates: {
-    canonical: 'https://toolify-theta.vercel.app/blog',
-  },
-};
 
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');

@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { AITool } from '@/types/aiTool';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages
@@ -26,9 +27,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { blogPosts } = await import('@/data/blogPosts');
   const blogUrls = blogPosts.map(post => `/blog/${post.slug}`);
 
-  // Get AI tools dynamically
-  const { aiTools } = await import('@/data/aiTools');
-  const toolUrls = aiTools.map(tool => `/ai-tools/${tool.id}`);
+  // Get AI tools dynamically - using empty array if module not found
+  let toolUrls: string[] = [];
+  try {
+    // Using dynamic import with type assertion
+    const module = await import('@/data/aiTools');
+    const aiTools = module.aiTools as AITool[] | undefined;
+    if (aiTools && Array.isArray(aiTools)) {
+      toolUrls = aiTools.map(tool => `/ai-tools/${tool.id}`);
+    }
+  } catch (error) {
+    console.warn('Could not load aiTools for sitemap, using empty array');
+  }
 
   // Combine all URLs
   const allUrls = [...staticPages, ...blogUrls, ...toolUrls];
