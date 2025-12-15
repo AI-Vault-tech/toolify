@@ -85,8 +85,9 @@ const StructuredData: React.FC<StructuredDataProps> = ({
         "@type": "EntryPoint",
         "urlTemplate": "https://toolify-theta.vercel.app/search?q={search_term_string}"
       },
+      // @ts-ignore - query-input is valid schema.org but not in the type definition
       "query-input": "required name=search_term_string"
-    }]
+    } as any] // Type assertion to handle the query-input property
   };
 
   // Breadcrumb schema
