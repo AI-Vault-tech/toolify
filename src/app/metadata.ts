@@ -1,44 +1,113 @@
 import { Metadata } from 'next';
 
+const siteUrl = 'https://toolify-theta.vercel.app';
+const siteName = 'Toolify - AI Tools Directory';
+const siteDescription = 'Discover the best AI tools and resources. Find, compare, and evaluate 35,000+ AI tools for your business and personal needs.';
+const siteKeywords = [
+  'AI tools',
+  'artificial intelligence',
+  'machine learning',
+  'AI directory',
+  'AI resources',
+  'best AI tools',
+  'AI software',
+  'AI platforms',
+  'AI tools comparison',
+  'AI tools for business',
+  'AI tools for developers',
+  'AI tools for marketing',
+  'AI tools for content creation',
+  'AI tools for productivity',
+  'AI tools 2025',
+  'top AI tools',
+  'free AI tools',
+  'AI tools review',
+  'AI tools list',
+  'AI tools directory'
+];
+
 export const metadata: Metadata = {
-  title: "AI Nexus | The World's Ultimate AI Ecosystem",
-  description: "Discover 35,000+ cutting-edge AI tools, resources, and innovations in the world's most comprehensive AI directory. Stay ahead with expert reviews, tutorials, and industry insights.",
-  keywords: [
-    'AI tools',
-    'artificial intelligence',
-    'machine learning',
-    'AI directory',
-    'AI resources',
-    'AI innovations',
-    'best AI tools',
-    'AI software',
-    'AI platforms',
-    'AI tools directory'
-  ],
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  keywords: siteKeywords,
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+      // Add more languages as needed
+    },
+  },
   openGraph: {
-    title: "AI Nexus | The World's Ultimate AI Ecosystem",
-    description: "Discover 35,000+ cutting-edge AI tools, resources, and innovations. The world's most comprehensive AI directory with expert reviews and industry insights.",
-    url: 'https://toolify-theta.vercel.app',
-    siteName: 'AI Nexus',
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName,
+    title: siteName,
+    description: siteDescription,
     images: [
       {
-        url: 'https://toolify-theta.vercel.app/images/hero-og.jpg',
+        url: `${siteUrl}/images/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "AI Nexus - The World's Ultimate AI Ecosystem",
+        alt: siteName,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "AI Nexus | The World's Ultimate AI Ecosystem",
-    description: "Discover 35,000+ cutting-edge AI tools, resources, and innovations. The world's most comprehensive AI directory with expert reviews and industry insights.",
-    images: ['https://toolify-theta.vercel.app/images/hero-og.jpg'],
-    creator: '@AINexus',
+    title: siteName,
+    description: siteDescription,
+    images: [`${siteUrl}/images/twitter-card.jpg`],
+    site: '@ToolifyAI',
+    creator: '@ToolifyAI',
   },
-  alternates: {
-    canonical: 'https://toolify-theta.vercel.app',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  verification: {
+    // Add verification codes here
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+    yandex: 'YANDEX_VERIFICATION_CODE',
+    // other: {
+    //   me: ['your-email@example.com', 'your-other-email@example.com'],
+    // },
+  },
+  // Additional metadata
+  applicationName: siteName,
+  referrer: 'origin-when-cross-origin',
+  authors: [{ name: 'Toolify Team' }],
+  creator: 'Toolify',
+  publisher: 'Toolify',
+  formatDetection: {
+    email: true,
+    address: false,
+    telephone: false,
+  },
+  // Viewport is handled in layout.tsx
+  // themeColor: [
+  //   { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+  //   { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  // ],
+  // icons: {
+  //   icon: '/favicon.ico',
+  //   shortcut: '/favicon-16x16.png',
+  //   apple: '/apple-touch-icon.png',
+  // },
+  // manifest: '/site.webmanifest',
+  // other: {
+  //   'msapplication-TileColor': '#ffffff',
+  //   'msapplication-config': '/browserconfig.xml',
+  // },
 };

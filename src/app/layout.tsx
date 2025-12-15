@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./neural-styles.module.css";
 import Navigation from "@/components/layout/Navigation";
+import StructuredDataWrapper from "@/components/seo/StructuredDataWrapper";
 import Footer from "@/components/layout/Footer";
-import { StructuredData } from "@/components/seo/StructuredData";
 import { WebVitals } from "@/components/analytics/WebVitals";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -123,7 +123,8 @@ export default function RootLayout({
             <meta name="referrer" content="no-referrer-when-downgrade" />
             {/* Google Search Console Verification */}
             <meta name="google-site-verification" content="jHraxgLIDV6_KU_3yrqz8YTK65ekU7BqBQW96eF8pzA" />
-            <StructuredData />
+            {/* Client-side structured data */}
+            <StructuredDataWrapper />
           </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white min-h-screen flex flex-col`}

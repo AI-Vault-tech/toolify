@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import InteractiveOrbit from '@/components/ui/InteractiveOrbit';
+import NeuralBackground from '@/components/effects/NeuralBackground';
 
 export default function Home() {
   const [toolCount, setToolCount] = useState(0);
@@ -304,8 +305,9 @@ export default function Home() {
   return (
     <div 
       ref={containerRef}
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden relative"
+      className="min-h-screen text-white overflow-hidden relative"
     >
+      <NeuralBackground />
       {/* Enhanced animated background with interactive elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Multiple layers of particles for depth */}
