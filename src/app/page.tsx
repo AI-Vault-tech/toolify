@@ -416,6 +416,13 @@ export default function Home() {
             </span>
           </motion.p>
           
+          {/* Monetag Direct Link Zone - Talented tag */}
+          <div className="mb-16 text-center">
+            <a href="https://otieu.com/4/10465890" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full shadow-2xl hover:from-amber-600 hover:to-orange-600 transition-all font-bold text-2xl transform hover:scale-105">
+              💰 Earn More with Monetag - Click Here!
+            </a>
+          </div>
+          
           {/* Live counter with enhanced styling */}
           <motion.div 
             className="mb-24"

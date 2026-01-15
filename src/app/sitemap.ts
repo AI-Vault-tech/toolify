@@ -54,8 +54,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
 
+    // Get playbooks dynamically
+    const { playbooks } = await import('@/data/playbooks');
+    const playbookUrls: MetadataRoute.Sitemap = playbooks.map((playbook) => ({
+      url: `${baseUrl}/playbooks/${playbook.slug}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
+
     // Combine all URLs
-    return [...staticPages, ...blogUrls, ...toolUrls];
+    return [...staticPages, ...blogUrls, ...toolUrls, ...playbookUrls];
   } catch (error) {
     console.warn('Warning: Could not load dynamic content for sitemap:', error);
     // Return static pages only if dynamic content fails

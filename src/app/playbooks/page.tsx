@@ -1306,6 +1306,13 @@ export default function PlaybooksPage() {
             Expert-crafted playbooks for every role and industry.
           </motion.p>
           
+          {/* Monetag Direct Link Zone - Talented tag */}
+          <div className="mb-8 text-center">
+            <a href="https://otieu.com/4/10465890" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full shadow-lg hover:from-amber-600 hover:to-orange-600 transition-all font-bold text-lg transform hover:scale-105">
+              💰 Earn More with Monetag
+            </a>
+          </div>
+          
           {/* Enhanced Search and Filters */}
           <motion.div 
             className="max-w-4xl mx-auto mb-8"
