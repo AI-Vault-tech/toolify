@@ -123,6 +123,8 @@ export default function RootLayout({
             <meta name="referrer" content="no-referrer-when-downgrade" />
             {/* Google Search Console Verification */}
             <meta name="google-site-verification" content="jHraxgLIDV6_KU_3yrqz8YTK65ekU7BqBQW96eF8pzA" />
+            {/* AdSense Verification */}
+            <meta name="google-adsense-account" content="pub-8040019263366199" />
             {/* Monetag Verification */}
             <meta name="monetag" content="ef1d74dc6c48db8974df7725d690234d" />
             {/* Monetag Hot Tag Script */}
